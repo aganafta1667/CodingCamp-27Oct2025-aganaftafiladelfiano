@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+
+    <div class="form">
+      <input type="text" id="todoInput" placeholder="Add a todo..." />
+      <input type="date" id="dateInput" />
+      <button id="addBtn">+</button>
+    </div>
+
+    <div class="actions">
+      <button id="filterBtn">Filter</button>
+      <button id="resetBtn" class="hidden">Reset</button>
+      <button id="deleteAllBtn" class="delete-all">Delete All</button>
+    </div>
+
+    <div id="filterModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content" role="document">
+        <h2>Filter Options</h2>
+
+        <label><input type="radio" name="filterType" value="all" checked> All Tasks</label><br>
+        <label><input type="radio" name="filterType" value="done"> Completed</label><br>
+        <label><input type="radio" name="filterType" value="pending"> Uncompleted</label><br><br>
+
+        <label>Date Range:</label><br>
+        <input type="date" id="filterStart" /> -
+        <input type="date" id="filterEnd" />
+
+        <div class="modal-actions" style="margin-top:1rem;">
+          <button id="applyFilter">Apply</button>
+          <button id="closeFilter">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <table id="todoTable">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="todoBody">
+        <tr><td colspan="4" class="no-task">No task found</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
